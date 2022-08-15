@@ -1,5 +1,7 @@
 package flight.fachwerte;
 
+import java.util.Date;
+
 public final class Flight
 {
     private final int _id;
