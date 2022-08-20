@@ -18,6 +18,30 @@ public final class Passenger
         _surname = surname;
         _birthDate = birthDate;
         _originCountry = originCountry;
+    }
 
+    public int getId()
+    {
+        return _id;
+    }
+
+    public String getName()
+    {
+        return _name;
+    }
+
+    public String getSurname()
+    {
+        return _surname;
+    }
+
+    public Date getBirthDate()
+    {
+        return _birthDate;
+    }
+
+    public String getOriginCountry()
+    {
+        return _originCountry;
     }
 }

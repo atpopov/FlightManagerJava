@@ -1,15 +1,11 @@
 package flight.fachwerte;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public final class Plane
 {
     private final int _id;
     private final String _brand;
     private final String _model;
     private final int _capacity;
-    private Map<Passenger, String> _passengers;
 
     public Plane(int id, String brand, String model, int capacity)
     {
@@ -17,6 +13,25 @@ public final class Plane
         _brand = brand;
         _model = model;
         _capacity = capacity;
-        _passengers = new HashMap<Passenger, String>();
+    }
+
+    public int getId()
+    {
+        return _id;
+    }
+
+    public String getBrand()
+    {
+        return _brand;
+    }
+
+    public String getModel()
+    {
+        return _model;
+    }
+
+    public int getCapacity()
+    {
+        return _capacity;
     }
 }
