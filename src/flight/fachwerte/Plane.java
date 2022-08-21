@@ -34,4 +34,27 @@ public final class Plane
     {
         return _capacity;
     }
+
+    @Override
+    public int hashCode()
+    {
+        int base = 15;
+        return base * Integer.parseInt(_brand) + Integer.parseInt(_model)
+                + _capacity;
+    }
+
+    private boolean equals(Plane other)
+    {
+        return (this._brand.equals(other._brand)
+                && this._model.equals(other._model)
+                && this._capacity == other._capacity);
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Brand: " + _brand + "\n" + "Model: " + _model + "\n"
+                + "Capacity: " + _capacity + "Passengers";
+    }
+
 }
