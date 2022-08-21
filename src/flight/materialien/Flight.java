@@ -1,10 +1,13 @@
-package flight.fachwerte;
+package flight.materialien;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public final class Flight
+import flight.fachwerte.Passenger;
+import flight.fachwerte.Plane;
+
+public class Flight
 {
     private final int _id;
     private final String _departureLocation;
