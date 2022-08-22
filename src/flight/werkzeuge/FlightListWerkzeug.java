@@ -15,5 +15,7 @@ public class FlightListWerkzeug
         _flights = flights;
 
         _ui = new FlightListWerkzeugUI();
+
+        _ui.showWindow();
     }
 }
