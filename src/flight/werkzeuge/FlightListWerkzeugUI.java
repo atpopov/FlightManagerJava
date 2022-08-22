@@ -36,17 +36,28 @@ public class FlightListWerkzeugUI
             .add(bottomPanel, BorderLayout.SOUTH);
     }
 
+    /**
+     * Makes the window visible.
+     */
     public void showWindow()
     {
         _frame.setSize(900, 700);
         _frame.setVisible(true);
     }
 
+    /**
+     * Closes the window.
+     */
     public void closeWindow()
     {
         _frame.dispose();
     }
 
+    /**
+     * Creates the top panel.
+     * 
+     * @return topPanel
+     */
     private JPanel createTopPanel()
     {
         JPanel topPanel = new JPanel();
@@ -60,14 +71,28 @@ public class FlightListWerkzeugUI
         return topPanel;
     }
 
+    /**
+     * Creates the bottom Panel.
+     * 
+     * @return bottomPanel
+     */
     private JPanel createBottomPanel()
     {
         JPanel bottomPanel = new JPanel();
         bottomPanel.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 0));
         bottomPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
-        _endButton = new JButton("End");
+        _endButton = new JButton("Exit");
         bottomPanel.add(_endButton);
 
         return bottomPanel;
+    }
+
+    /**
+     * Returns the end Button.
+     * @return endButton
+     */
+    public JButton getEndButton()
+    {
+        return _endButton;
     }
 }
