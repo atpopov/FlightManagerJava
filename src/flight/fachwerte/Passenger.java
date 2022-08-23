@@ -1,17 +1,15 @@
 package flight.fachwerte;
 
-import java.util.Date;
-
 public final class Passenger
 {
     private final int _id;
     private final String _name;
     private final String _surname;
-    private final Date _birthDate;
+    private final Datum _birthDate;
     private final String _originCountry;
     private final String _identityNumber;
 
-    public Passenger(int id, String name, String surname, Date birthDate,
+    public Passenger(int id, String name, String surname, Datum birthDate,
             String originCountry, String identityNumber)
     {
         _id = id;
@@ -37,7 +35,7 @@ public final class Passenger
         return _surname;
     }
 
-    public Date getBirthDate()
+    public Datum getBirthDate()
     {
         return _birthDate;
     }
