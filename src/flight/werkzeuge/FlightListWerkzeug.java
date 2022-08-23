@@ -13,14 +13,17 @@ public class FlightListWerkzeug
     private FlightListWerkzeugUI _ui;
 
     private ArrivalDepartureWerkzeug _arrivalDepartureWerkzeug;
+    private DateChooserWerkzeug _dateChooserWerkzeug;
 
     public FlightListWerkzeug(List<Flight> flights)
     {
         _flights = flights;
 
         _arrivalDepartureWerkzeug = new ArrivalDepartureWerkzeug();
+        _dateChooserWerkzeug = new DateChooserWerkzeug();
 
-        _ui = new FlightListWerkzeugUI(_arrivalDepartureWerkzeug.getUIPanel());
+        _ui = new FlightListWerkzeugUI(_arrivalDepartureWerkzeug.getUIPanel(),
+                _dateChooserWerkzeug.getUIPanel());
 
         registerUIActions();
 
