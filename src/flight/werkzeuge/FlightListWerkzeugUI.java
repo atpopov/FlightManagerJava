@@ -87,6 +87,14 @@ public class FlightListWerkzeugUI
         return bottomPanel;
     }
 
+    private JPanel createLeftPanel()
+    {
+        JPanel leftPanel = new JPanel();
+        leftPanel.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 5));
+
+        return leftPanel;
+    }
+
     /**
      * Returns the end Button.
      * @return endButton
