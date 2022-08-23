@@ -12,11 +12,15 @@ public class FlightListWerkzeug
 
     private FlightListWerkzeugUI _ui;
 
+    private ArrivalDepartureWerkzeug _arrivalDepartureWerkzeug;
+
     public FlightListWerkzeug(List<Flight> flights)
     {
         _flights = flights;
 
-        _ui = new FlightListWerkzeugUI();
+        _arrivalDepartureWerkzeug = new ArrivalDepartureWerkzeug();
+
+        _ui = new FlightListWerkzeugUI(_arrivalDepartureWerkzeug.getUIPanel());
 
         registerUIActions();
 

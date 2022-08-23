@@ -9,6 +9,9 @@ public class ArrivalDepartureWerkzeugUI
 {
     private JPanel _mainPanel;
 
+    private JButton _departures;
+    private JButton _arrivals;
+
     public ArrivalDepartureWerkzeugUI()
     {
         _mainPanel = createMainPanel();
@@ -18,11 +21,11 @@ public class ArrivalDepartureWerkzeugUI
     {
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-        JButton departures = new JButton("Departures");
-        JButton arrivals = new JButton("Arrivals");
+        _departures = new JButton("Departures");
+        _arrivals = new JButton("Arrivals");
 
-        mainPanel.add(departures);
-        mainPanel.add(arrivals);
+        mainPanel.add(_departures);
+        mainPanel.add(_arrivals);
 
         return mainPanel;
     }
@@ -30,5 +33,15 @@ public class ArrivalDepartureWerkzeugUI
     public JPanel getUIPanel()
     {
         return _mainPanel;
+    }
+
+    public JButton getDeparturesButton()
+    {
+        return _departures;
+    }
+
+    public JButton getArrivalsButton()
+    {
+        return _arrivals;
     }
 }
