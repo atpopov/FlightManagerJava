@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import flight.materialien.Flight;
-import flight.werkzeuge.FlightListWerkzeug;
+import flight.werkzeuge.FlightWerkzeug;
 
 public class StrartupFlightManager
 {
@@ -12,6 +12,6 @@ public class StrartupFlightManager
     {
         List<Flight> flights = new ArrayList<Flight>();
 
-        FlightListWerkzeug flightListWerkzeug = new FlightListWerkzeug(flights);
+        FlightWerkzeug flightListWerkzeug = new FlightWerkzeug(flights);
     }
 }

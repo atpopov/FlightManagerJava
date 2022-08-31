@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-public class FlightListWerkzeugUI
+public class FlightWerkzeugUI
 {
 
     private static final String TITLE = "Flight Manager";
@@ -20,7 +20,7 @@ public class FlightListWerkzeugUI
     private JFrame _frame;
     private JButton _endButton;
 
-    public FlightListWerkzeugUI(JPanel arrivalDeparture, JPanel dateChooser)
+    public FlightWerkzeugUI(JPanel arrivalDeparture, JPanel dateChooser)
     {
         _frame = new JFrame(TITLE);
         _frame.setDefaultCloseOperation(_frame.EXIT_ON_CLOSE);

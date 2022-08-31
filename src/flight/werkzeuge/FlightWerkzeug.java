@@ -6,23 +6,23 @@ import java.util.List;
 
 import flight.materialien.Flight;
 
-public class FlightListWerkzeug
+public class FlightWerkzeug
 {
     private List<Flight> _flights;
 
-    private FlightListWerkzeugUI _ui;
+    private FlightWerkzeugUI _ui;
 
     private ArrivalDepartureWerkzeug _arrivalDepartureWerkzeug;
     private DateChooserWerkzeug _dateChooserWerkzeug;
 
-    public FlightListWerkzeug(List<Flight> flights)
+    public FlightWerkzeug(List<Flight> flights)
     {
         _flights = flights;
 
         _arrivalDepartureWerkzeug = new ArrivalDepartureWerkzeug();
         _dateChooserWerkzeug = new DateChooserWerkzeug();
 
-        _ui = new FlightListWerkzeugUI(_arrivalDepartureWerkzeug.getUIPanel(),
+        _ui = new FlightWerkzeugUI(_arrivalDepartureWerkzeug.getUIPanel(),
                 _dateChooserWerkzeug.getUIPanel());
 
         registerUIActions();
