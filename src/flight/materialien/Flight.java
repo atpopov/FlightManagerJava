@@ -3,7 +3,6 @@ package flight.materialien;
 import java.util.HashMap;
 import java.util.Map;
 
-import flight.fachwerte.Datum;
 import flight.fachwerte.FlightDirection;
 import flight.fachwerte.Passenger;
 import flight.fachwerte.Plane;
@@ -13,15 +12,15 @@ public class Flight
     private final int _id;
     private final String _departureLocation;
     private final String _arrivalLocation;
-    private final Datum _departureTime;
-    private final Datum _arrivalTime;
+    private final String _departureTime;
+    private final String _arrivalTime;
     private final Plane _plane;
     private final String _flightNumber;
     private final FlightDirection _flightDirection;
     private Map<String, Passenger> _passengers;
 
     public Flight(int id, String departureLocation, String arrivalLocation,
-            Datum departureTime, Datum arrivalTime, Plane plane,
+            String departureTime, String arrivalTime, Plane plane,
             String flightNumber, FlightDirection flightDirection)
     {
         _id = id;
@@ -50,12 +49,12 @@ public class Flight
         return _arrivalLocation;
     }
 
-    public Datum getDepartureTime()
+    public String getDepartureTime()
     {
         return _departureTime;
     }
 
-    public Datum getArrivalTime()
+    public String getArrivalTime()
     {
         return _arrivalTime;
     }

@@ -20,7 +20,8 @@ public class FlightWerkzeugUI
     private JFrame _frame;
     private JButton _endButton;
 
-    public FlightWerkzeugUI(JPanel arrivalDeparture, JPanel dateChooser)
+    public FlightWerkzeugUI(JPanel arrivalDeparture, JPanel dateChooser,
+            JPanel flightList)
     {
         _frame = new JFrame(TITLE);
         _frame.setDefaultCloseOperation(_frame.EXIT_ON_CLOSE);
@@ -30,6 +31,7 @@ public class FlightWerkzeugUI
         JComponent topPanel = createTopPanel();
         JComponent bottomPanel = createBottomPanel();
         JComponent leftPanel = createLeftPanel(arrivalDeparture, dateChooser);
+        JComponent rightPanel = createRightPanel(flightList);
 
         _frame.getContentPane()
             .add(topPanel, BorderLayout.NORTH);
@@ -37,6 +39,8 @@ public class FlightWerkzeugUI
             .add(bottomPanel, BorderLayout.SOUTH);
         _frame.getContentPane()
             .add(leftPanel, BorderLayout.WEST);
+        _frame.getContentPane()
+            .add(rightPanel, BorderLayout.EAST);
     }
 
     /**
@@ -107,6 +111,18 @@ public class FlightWerkzeugUI
         leftPanel.add(arrivalDeparture, BorderLayout.CENTER);
 
         return leftPanel;
+    }
+
+    private JPanel createRightPanel(JPanel flightList)
+    {
+        JPanel rightPanel = new JPanel();
+
+        rightPanel.setLayout(new BorderLayout());
+        flightList.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 0));
+
+        rightPanel.add(flightList);
+
+        return rightPanel;
     }
 
     /**
