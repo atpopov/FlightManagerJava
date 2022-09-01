@@ -16,6 +16,9 @@ public class StrartupFlightManager
         flights.add(new Flight(1, "Sofia", "Paris", "15:45", "17:25",
                 new Plane(1, "Airbus", "A320", 100), "FR337",
                 FlightDirection.Departure));
+        flights.add(new Flight(2, "Plovdiv", "Barcelona", "18:45", "19:25",
+                new Plane(1, "Airbus", "A320", 100), "FR458",
+                FlightDirection.Departure));
 
         FlightWerkzeug flightListWerkzeug = new FlightWerkzeug(flights);
     }

@@ -3,6 +3,7 @@ package flight.werkzeuge;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -117,7 +118,7 @@ public class FlightWerkzeugUI
     {
         JPanel rightPanel = new JPanel();
 
-        rightPanel.setLayout(new BorderLayout());
+        rightPanel.setLayout(new GridLayout());
         flightList.setBorder(BorderFactory.createEmptyBorder(5, 0, 5, 0));
 
         rightPanel.add(flightList);

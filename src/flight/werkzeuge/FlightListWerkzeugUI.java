@@ -21,11 +21,6 @@ public class FlightListWerkzeugUI
     public FlightListWerkzeugUI(List<Flight> flights)
     {
         _flights = flights;
-        if (flights.size() == 0)
-        {
-            flights
-                .add(new Flight(0, null, null, null, null, null, null, null));
-        }
 
         _tableData = new Object[flights.size()][6];
         _primaryPanel = createPanel();
