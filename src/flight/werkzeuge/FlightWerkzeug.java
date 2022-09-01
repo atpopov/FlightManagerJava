@@ -20,9 +20,10 @@ public class FlightWerkzeug
     {
         _flights = flights;
 
-        _arrivalDepartureWerkzeug = new ArrivalDepartureWerkzeug();
         _dateChooserWerkzeug = new DateChooserWerkzeug();
         _flightListWerkzeug = new FlightListWerkzeug(_flights);
+        _arrivalDepartureWerkzeug = new ArrivalDepartureWerkzeug(
+                _flightListWerkzeug);
 
         _ui = new FlightWerkzeugUI(_arrivalDepartureWerkzeug.getUIPanel(),
                 _dateChooserWerkzeug.getUIPanel(),

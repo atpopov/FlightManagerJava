@@ -11,11 +11,14 @@ public class ArrivalDepartureWerkzeug extends Listening
 {
     private ArrivalDepartureWerkzeugUI _ui;
 
+    private FlightListWerkzeug _flightListWerkzeug;
+
     private boolean _isDeparturesSelected;
 
-    public ArrivalDepartureWerkzeug()
+    public ArrivalDepartureWerkzeug(FlightListWerkzeug flightListWerkzeug)
     {
         _ui = new ArrivalDepartureWerkzeugUI();
+        _flightListWerkzeug = flightListWerkzeug;
         _isDeparturesSelected = true;
 
         registerUIActions();
@@ -43,6 +46,8 @@ public class ArrivalDepartureWerkzeug extends Listening
                 public void actionPerformed(ActionEvent e)
                 {
                     _isDeparturesSelected = true;
+                    _flightListWerkzeug
+                        .actualliseFlightList(_isDeparturesSelected);
                     buttonIsClicked();
                 }
             });
@@ -54,6 +59,8 @@ public class ArrivalDepartureWerkzeug extends Listening
                 public void actionPerformed(ActionEvent e)
                 {
                     _isDeparturesSelected = false;
+                    _flightListWerkzeug
+                        .actualliseFlightList(_isDeparturesSelected);
                     buttonIsClicked();
                 }
             });
