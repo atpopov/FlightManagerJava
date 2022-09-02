@@ -47,6 +47,32 @@ public class FlightListWerkzeugUI
         return panel;
     }
 
+    public JPanel aktuallisePanel(List<Flight> flights)
+    {
+        JPanel panel = new JPanel();
+
+        int counter = 0;
+        for (Flight flight : _flights)
+        {
+            _tableData[counter][0] = flight.getFlightNumber();
+            _tableData[counter][1] = flight.getDepartureLocation();
+            _tableData[counter][2] = flight.getArrivalLocation();
+            _tableData[counter][3] = flight.getDepartureTime();
+            _tableData[counter][4] = flight.getArrivalTime();
+            counter++;
+        }
+
+        _table = new JTable(_tableData, _tableCellNames);
+        panel.add(_table);
+
+        return panel;
+    }
+
+    public void switchUIPanel(JPanel panel)
+    {
+        _primaryPanel = panel;
+    }
+
     public JPanel getUIPanel()
     {
         return _primaryPanel;

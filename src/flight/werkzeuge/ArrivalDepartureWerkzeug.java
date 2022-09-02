@@ -27,8 +27,17 @@ public class ArrivalDepartureWerkzeug extends Listening
     /**
      * Reacts, when a new Button is clicked.
      */
-    private void buttonIsClicked()
+    private void departuresButtonIsClicked()
     {
+        _isDeparturesSelected = true;
+        _flightListWerkzeug.actualliseFlightList(_isDeparturesSelected);
+        informAboutChange();
+    }
+
+    private void arrivalsButtonIsClicked()
+    {
+        _isDeparturesSelected = false;
+        _flightListWerkzeug.actualliseFlightList(_isDeparturesSelected);
         informAboutChange();
     }
 
@@ -45,10 +54,7 @@ public class ArrivalDepartureWerkzeug extends Listening
                 @Override
                 public void actionPerformed(ActionEvent e)
                 {
-                    _isDeparturesSelected = true;
-                    _flightListWerkzeug
-                        .actualliseFlightList(_isDeparturesSelected);
-                    buttonIsClicked();
+                    departuresButtonIsClicked();
                 }
             });
 
@@ -58,10 +64,7 @@ public class ArrivalDepartureWerkzeug extends Listening
                 @Override
                 public void actionPerformed(ActionEvent e)
                 {
-                    _isDeparturesSelected = false;
-                    _flightListWerkzeug
-                        .actualliseFlightList(_isDeparturesSelected);
-                    buttonIsClicked();
+                    arrivalsButtonIsClicked();
                 }
             });
     }

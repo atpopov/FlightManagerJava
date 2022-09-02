@@ -7,8 +7,9 @@ import javax.swing.JPanel;
 
 import flight.fachwerte.FlightDirection;
 import flight.materialien.Flight;
+import flight.werkzeuge.beobachter.Listening;
 
-public class FlightListWerkzeug
+public class FlightListWerkzeug extends Listening
 {
     private List<Flight> _flights;
     private List<Flight> _actualFlights;
@@ -22,7 +23,6 @@ public class FlightListWerkzeug
 
         _ui = new FlightListWerkzeugUI(_flights);
 
-        registerUIActions();
     }
 
     public JPanel getUIPanel()
@@ -53,12 +53,8 @@ public class FlightListWerkzeug
                 }
             }
         }
-
-    }
-
-    public void registerUIActions()
-    {
-        _ui = new FlightListWerkzeugUI(_actualFlights);
+        _ui.switchUIPanel(_ui.aktuallisePanel(_actualFlights));
+        informAboutChange();
     }
 
 }
