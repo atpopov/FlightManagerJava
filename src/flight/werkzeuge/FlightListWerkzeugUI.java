@@ -88,6 +88,11 @@ public class FlightListWerkzeugUI
         return _table;
     }
 
+    public void switchPanel(JPanel newPanel)
+    {
+        _primaryPanel = newPanel;
+    }
+
     public JPanel getUIPanel()
     {
         return _primaryPanel;
