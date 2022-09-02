@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.swing.JPanel;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 import flight.materialien.Flight;
 
@@ -42,6 +43,20 @@ public class FlightListWerkzeugUI
         }
 
         _table = new JTable(_tableData, _tableCellNames);
+
+        DefaultTableModel tableModel = new DefaultTableModel(_tableData,
+                _tableCellNames)
+        {
+
+            @Override
+            public boolean isCellEditable(int row, int column)
+            {
+                //all cells false
+                return false;
+            }
+        };
+
+        _table.setModel(tableModel);
         panel.add(_table);
 
         return panel;
@@ -68,9 +83,9 @@ public class FlightListWerkzeugUI
         return panel;
     }
 
-    public void switchUIPanel(JPanel panel)
+    public JTable getTable()
     {
-        _primaryPanel = panel;
+        return _table;
     }
 
     public JPanel getUIPanel()
