@@ -65,9 +65,10 @@ public class FlightListWerkzeugUI
     public JPanel aktuallisePanel(List<Flight> flights)
     {
         JPanel panel = new JPanel();
+        _tableData = new Object[flights.size()][6];
 
         int counter = 0;
-        for (Flight flight : _flights)
+        for (Flight flight : flights)
         {
             _tableData[counter][0] = flight.getFlightNumber();
             _tableData[counter][1] = flight.getDepartureLocation();

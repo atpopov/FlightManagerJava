@@ -53,7 +53,10 @@ public class FlightListWerkzeug extends Listening
                 }
             }
         }
-        _ui.switchPanel(_ui.aktuallisePanel(_actualFlights));
+        _ui.getUIPanel()
+            .remove(_ui.getTable());
+        _ui.getUIPanel()
+            .add(_ui.aktuallisePanel(_actualFlights));
         informAboutChange();
     }
 
