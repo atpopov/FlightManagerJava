@@ -1,5 +1,6 @@
 package flight.werkzeuge;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -54,6 +55,10 @@ public class ArrivalDepartureWerkzeug extends Listening
                 @Override
                 public void actionPerformed(ActionEvent e)
                 {
+                    _ui.getDeparturesButton()
+                        .setBackground(Color.GREEN);
+                    _ui.getArrivalsButton()
+                        .setBackground(null);
                     departuresButtonIsClicked();
                 }
             });
@@ -64,6 +69,10 @@ public class ArrivalDepartureWerkzeug extends Listening
                 @Override
                 public void actionPerformed(ActionEvent e)
                 {
+                    _ui.getArrivalsButton()
+                        .setBackground(Color.GREEN);
+                    _ui.getDeparturesButton()
+                        .setBackground(null);
                     arrivalsButtonIsClicked();
                 }
             });

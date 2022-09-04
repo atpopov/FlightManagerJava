@@ -36,7 +36,6 @@ public class FlightListWerkzeugUI
         DefaultTableModel tableModel = new DefaultTableModel(_tableData,
                 _tableCellNames)
         {
-
             @Override
             public boolean isCellEditable(int row, int column)
             {
@@ -58,7 +57,6 @@ public class FlightListWerkzeugUI
         DefaultTableModel tableModel = new DefaultTableModel(_tableData,
                 _tableCellNames)
         {
-
             @Override
             public boolean isCellEditable(int row, int column)
             {
