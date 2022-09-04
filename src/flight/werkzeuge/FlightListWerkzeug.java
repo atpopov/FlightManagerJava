@@ -30,7 +30,7 @@ public class FlightListWerkzeug extends Listening
         return _ui.getUIPanel();
     }
 
-    public void actualliseFlightList(boolean isDeparturesSelected)
+    public void actualiseFlightList(boolean isDeparturesSelected)
     {
         _actualFlights = new ArrayList<Flight>();
         if (isDeparturesSelected)
@@ -53,10 +53,8 @@ public class FlightListWerkzeug extends Listening
                 }
             }
         }
-        _ui.getUIPanel()
-            .remove(_ui.getTable());
-        _ui.getUIPanel()
-            .add(_ui.aktuallisePanel(_actualFlights));
+        _ui.getTable()
+            .setModel(_ui.aktualisePanel(_actualFlights));
         informAboutChange();
     }
 

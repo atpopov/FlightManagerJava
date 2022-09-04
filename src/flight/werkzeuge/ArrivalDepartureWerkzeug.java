@@ -30,14 +30,14 @@ public class ArrivalDepartureWerkzeug extends Listening
     private void departuresButtonIsClicked()
     {
         _isDeparturesSelected = true;
-        _flightListWerkzeug.actualliseFlightList(_isDeparturesSelected);
+        _flightListWerkzeug.actualiseFlightList(_isDeparturesSelected);
         informAboutChange();
     }
 
     private void arrivalsButtonIsClicked()
     {
         _isDeparturesSelected = false;
-        _flightListWerkzeug.actualliseFlightList(_isDeparturesSelected);
+        _flightListWerkzeug.actualiseFlightList(_isDeparturesSelected);
         informAboutChange();
     }
 

@@ -23,24 +23,13 @@ public class FlightListWerkzeugUI
     {
         _flights = flights;
 
-        _tableData = new Object[flights.size()][6];
-        _primaryPanel = createPanel();
+        _primaryPanel = createPanel(_flights);
     }
 
-    private JPanel createPanel()
+    private JPanel createPanel(List<Flight> flights)
     {
         JPanel panel = new JPanel();
-
-        int counter = 0;
-        for (Flight flight : _flights)
-        {
-            _tableData[counter][0] = flight.getFlightNumber();
-            _tableData[counter][1] = flight.getDepartureLocation();
-            _tableData[counter][2] = flight.getArrivalLocation();
-            _tableData[counter][3] = flight.getDepartureTime();
-            _tableData[counter][4] = flight.getArrivalTime();
-            counter++;
-        }
+        _tableData = fillTableData(flights);
 
         _table = new JTable(_tableData, _tableCellNames);
 
@@ -62,9 +51,28 @@ public class FlightListWerkzeugUI
         return panel;
     }
 
-    public JPanel aktuallisePanel(List<Flight> flights)
+    public DefaultTableModel aktualisePanel(List<Flight> flights)
     {
-        JPanel panel = new JPanel();
+        _tableData = fillTableData(flights);
+
+        DefaultTableModel tableModel = new DefaultTableModel(_tableData,
+                _tableCellNames)
+        {
+
+            @Override
+            public boolean isCellEditable(int row, int column)
+            {
+                //all cells false
+                return false;
+            }
+        };
+
+        return tableModel;
+
+    }
+
+    private Object[][] fillTableData(List<Flight> flights)
+    {
         _tableData = new Object[flights.size()][6];
 
         int counter = 0;
@@ -78,20 +86,12 @@ public class FlightListWerkzeugUI
             counter++;
         }
 
-        _table = new JTable(_tableData, _tableCellNames);
-        panel.add(_table);
-
-        return panel;
+        return _tableData;
     }
 
     public JTable getTable()
     {
         return _table;
-    }
-
-    public void switchPanel(JPanel newPanel)
-    {
-        _primaryPanel = newPanel;
     }
 
     public JPanel getUIPanel()
