@@ -14,6 +14,7 @@ public class FlightListWerkzeug extends Listening
 {
     private List<Flight> _flights;
     private List<Flight> _actualFlights;
+    private boolean _isDeparturesSelected = true;
 
     private FlightListWerkzeugUI _ui;
 
@@ -59,9 +60,15 @@ public class FlightListWerkzeug extends Listening
                 }
             }
         }
+        _isDeparturesSelected = isDeparturesSelected;
         _ui.getTable()
             .setModel(_ui.aktualisePanel(_actualFlights));
         informAboutChange();
+    }
+
+    public boolean getIsDeparturesSelected()
+    {
+        return _isDeparturesSelected;
     }
 
 }

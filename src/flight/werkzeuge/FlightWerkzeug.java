@@ -20,9 +20,8 @@ public class FlightWerkzeug
     {
         _flights = flights;
 
-        _dateChooserWerkzeug = new DateChooserWerkzeug(
-                _arrivalDepartureWerkzeug, _flightListWerkzeug);
         _flightListWerkzeug = new FlightListWerkzeug(_flights);
+        _dateChooserWerkzeug = new DateChooserWerkzeug(_flightListWerkzeug);
         _arrivalDepartureWerkzeug = new ArrivalDepartureWerkzeug(
                 _flightListWerkzeug, _dateChooserWerkzeug);
 

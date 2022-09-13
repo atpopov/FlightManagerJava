@@ -17,11 +17,19 @@ public class StrartupFlightManager
         flights.add(new Flight(1, "Sofia", "Paris", Datum.heute(), "15:45",
                 "17:25", new Plane(1, "Airbus", "A320", 100), "FR337",
                 FlightDirection.Departure));
+        flights.add(new Flight(1, "Sofia", "Paris", Datum.heute()
+            .vorherigerTag(), "15:45", "17:25",
+                new Plane(1, "Airbus", "A320", 100), "FR337",
+                FlightDirection.Departure));
         flights.add(new Flight(2, "Plovdiv", "Barcelona", Datum.heute(),
                 "18:45", "19:25", new Plane(1, "Airbus", "A320", 100), "FR458",
                 FlightDirection.Arrival));
         flights.add(new Flight(2, "Burgas", "Hamburg", Datum.heute(), "12:45",
                 "13:25", new Plane(1, "Airbus", "A320", 100), "FR758",
+                FlightDirection.Arrival));
+        flights.add(new Flight(2, "Burgas", "Hamburg", Datum.heute()
+            .naechsterTag(), "12:45", "13:25",
+                new Plane(1, "Airbus", "A320", 100), "FR758",
                 FlightDirection.Arrival));
 
         FlightWerkzeug flightListWerkzeug = new FlightWerkzeug(flights);
