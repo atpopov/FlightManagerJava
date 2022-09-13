@@ -26,6 +26,12 @@ public class ArrivalDepartureWerkzeug extends Listening
         _isDeparturesSelected = true;
 
         registerUIActions();
+
+        _ui.getDeparturesButton()
+            .setBackground(Color.GREEN);
+        _ui.getArrivalsButton()
+            .setBackground(null);
+        departuresButtonIsClicked();
     }
 
     /**
