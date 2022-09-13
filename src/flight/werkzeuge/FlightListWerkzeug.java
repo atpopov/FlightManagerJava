@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.swing.JPanel;
 
+import flight.fachwerte.Datum;
 import flight.fachwerte.FlightDirection;
 import flight.materialien.Flight;
 import flight.werkzeuge.beobachter.Listening;
@@ -30,14 +31,17 @@ public class FlightListWerkzeug extends Listening
         return _ui.getUIPanel();
     }
 
-    public void actualiseFlightList(boolean isDeparturesSelected)
+    public void actualiseFlightList(boolean isDeparturesSelected,
+            Datum currentDate)
     {
         _actualFlights = new ArrayList<Flight>();
         if (isDeparturesSelected)
         {
             for (Flight flight : _flights)
             {
-                if (flight.getFlightDirection() == FlightDirection.Departure)
+                if ((flight.getFlightDirection() == FlightDirection.Departure)
+                        && (flight.getDepartureorArrivalDate()
+                            .equals(currentDate)))
                 {
                     _actualFlights.add(flight);
                 }
@@ -47,7 +51,9 @@ public class FlightListWerkzeug extends Listening
         {
             for (Flight flight : _flights)
             {
-                if (flight.getFlightDirection() == FlightDirection.Arrival)
+                if ((flight.getFlightDirection() == FlightDirection.Arrival)
+                        && (flight.getDepartureorArrivalDate()
+                            .equals(currentDate)))
                 {
                     _actualFlights.add(flight);
                 }

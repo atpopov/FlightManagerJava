@@ -12,11 +12,17 @@ public class DateChooserWerkzeug extends Listening
 {
     private DateChooserWerkzeugUI _ui;
     private Datum _chosenDate;
+    private ArrivalDepartureWerkzeug _arrivalDepartureWerkzeug;
+    private FlightListWerkzeug _flightListWerkzeug;
 
-    public DateChooserWerkzeug()
+    public DateChooserWerkzeug(
+            ArrivalDepartureWerkzeug arrivalDepartureWerkzeug,
+            FlightListWerkzeug flightListWerkzeug)
     {
         _chosenDate = Datum.heute();
         _ui = new DateChooserWerkzeugUI(_chosenDate.getFormatiertenString());
+        _arrivalDepartureWerkzeug = arrivalDepartureWerkzeug;
+        _flightListWerkzeug = flightListWerkzeug;
         registerUIActions();
     }
 
@@ -30,6 +36,9 @@ public class DateChooserWerkzeug extends Listening
         _chosenDate = _chosenDate.vorherigerTag();
         _ui.getDateLabel()
             .setText(_chosenDate.getFormatiertenString());
+        _flightListWerkzeug.actualiseFlightList(
+                _arrivalDepartureWerkzeug.getIfDeparturesSelected(),
+                _chosenDate);
         informAboutChange();
     }
 
@@ -38,6 +47,9 @@ public class DateChooserWerkzeug extends Listening
         _chosenDate = _chosenDate.naechsterTag();
         _ui.getDateLabel()
             .setText(_chosenDate.getFormatiertenString());
+        _flightListWerkzeug.actualiseFlightList(
+                _arrivalDepartureWerkzeug.getIfDeparturesSelected(),
+                _chosenDate);
         informAboutChange();
     }
 

@@ -13,13 +13,16 @@ public class ArrivalDepartureWerkzeug extends Listening
     private ArrivalDepartureWerkzeugUI _ui;
 
     private FlightListWerkzeug _flightListWerkzeug;
+    private DateChooserWerkzeug _dateChooserWerkzeug;
 
     private boolean _isDeparturesSelected;
 
-    public ArrivalDepartureWerkzeug(FlightListWerkzeug flightListWerkzeug)
+    public ArrivalDepartureWerkzeug(FlightListWerkzeug flightListWerkzeug,
+            DateChooserWerkzeug dateChooserWerkzeug)
     {
         _ui = new ArrivalDepartureWerkzeugUI();
         _flightListWerkzeug = flightListWerkzeug;
+        _dateChooserWerkzeug = dateChooserWerkzeug;
         _isDeparturesSelected = true;
 
         registerUIActions();
@@ -31,14 +34,16 @@ public class ArrivalDepartureWerkzeug extends Listening
     private void departuresButtonIsClicked()
     {
         _isDeparturesSelected = true;
-        _flightListWerkzeug.actualiseFlightList(_isDeparturesSelected);
+        _flightListWerkzeug.actualiseFlightList(_isDeparturesSelected,
+                _dateChooserWerkzeug.getChosenDate());
         informAboutChange();
     }
 
     private void arrivalsButtonIsClicked()
     {
         _isDeparturesSelected = false;
-        _flightListWerkzeug.actualiseFlightList(_isDeparturesSelected);
+        _flightListWerkzeug.actualiseFlightList(_isDeparturesSelected,
+                _dateChooserWerkzeug.getChosenDate());
         informAboutChange();
     }
 
@@ -76,5 +81,10 @@ public class ArrivalDepartureWerkzeug extends Listening
                     arrivalsButtonIsClicked();
                 }
             });
+    }
+
+    public boolean getIfDeparturesSelected()
+    {
+        return _isDeparturesSelected;
     }
 }
