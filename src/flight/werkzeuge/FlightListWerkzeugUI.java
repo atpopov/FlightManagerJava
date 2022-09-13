@@ -3,6 +3,7 @@ package flight.werkzeuge;
 import java.util.List;
 
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -45,7 +46,23 @@ public class FlightListWerkzeugUI
         };
 
         _table.setModel(tableModel);
-        panel.add(_table);
+
+        //Something is wrong with this code. Try to fix it!
+        /*TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(
+                _table.getModel());
+        _table.setRowSorter(sorter);
+        
+        List<RowSorter.SortKey> sortKeys = new ArrayList<>(25);
+        sortKeys.add(new RowSorter.SortKey(3, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(4, SortOrder.ASCENDING));
+        sorter.setSortKeys(sortKeys);*/
+
+        _table.setAutoCreateRowSorter(true);
+
+        JScrollPane scrollPane = new JScrollPane(_table);
+        _table.setFillsViewportHeight(true);
+
+        panel.add(scrollPane);
 
         return panel;
     }

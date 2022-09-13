@@ -14,7 +14,7 @@ public class FlightListWerkzeug extends Listening
 {
     private List<Flight> _flights;
     private List<Flight> _actualFlights;
-    private boolean _isDeparturesSelected = true;
+    private boolean _isDeparturesSelected;
 
     private FlightListWerkzeugUI _ui;
 
@@ -22,6 +22,7 @@ public class FlightListWerkzeug extends Listening
     {
         _flights = flights;
         _actualFlights = flights;
+        _isDeparturesSelected = true;
 
         _ui = new FlightListWerkzeugUI(_flights);
 
